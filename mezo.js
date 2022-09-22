@@ -18,6 +18,7 @@ class Mezo
         this.mezoElem.on("click", ()=>
         {
             this.kattintas();
+            this.jelenlegiJatekos();
             this.setAllapot();
         });
     }
@@ -49,6 +50,18 @@ class Mezo
     kiir(betu)
     {
         this.mezoElem.text(betu);
+    }
+
+    jelenlegiJatekos()
+    {
+        if (db%2===0)
+        {
+            $("h1").text("A következő játékos: O jön");
+        }
+        else if(db%2===1)
+        {
+            $("h1").text("A következő játékos: X jön");
+        }
     }
 
 
