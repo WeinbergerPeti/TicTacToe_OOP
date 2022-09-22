@@ -1,6 +1,5 @@
 import Jatekter from "./jatekter.js";
 
-$(function()
-{
+$(function () {
     new Jatekter();
 });

@@ -1,66 +1,54 @@
-let db=0;
+let db = 0;
 
-class Mezo
-{
+class Mezo {
     #index
     #allapot
-    constructor(allapot, elem)
-    {
+    constructor(allapot, elem) {
         // this.#index=index;
-        this.#allapot=allapot;
+        this.#allapot = allapot;
 
         elem.append(`<div class="mezo"><p class="elem"></p></div>`);
 
-        this.mezoElem=elem.children("div:last-child");
+        this.mezoElem = elem.children("div:last-child");
         console.log(this.mezoElem);
 
         // var db=0;
-        this.mezoElem.on("click", ()=>
-        {
+        this.mezoElem.on("click", () => {
             this.kattintas();
             this.jelenlegiJatekos();
             this.setAllapot();
         });
     }
 
-    setAllapot()
-    {
-        this.#allapot= false;
+    setAllapot() {
+        this.#allapot = false;
     }
 
-    kattintas()
-    {
-        if (this.#allapot)
-        {
+    kattintas() {
+        if (this.#allapot) {
             db++;
             console.log(db);
-            if(db%2===0)
-            {
+            if (db % 2 === 0) {
                 console.log("X");
                 this.kiir("X");
             }
-            else if(db%2===1)
-            {
+            else if (db % 2 === 1) {
                 console.log("O");
                 this.kiir("O");
             }
         }
     }
 
-    kiir(betu)
-    {
+    kiir(betu) {
         this.mezoElem.text(betu);
     }
 
-    jelenlegiJatekos()
-    {
-        if (db%2===0)
-        {
-            $("h1").text("A következő játékos: O jön");
+    jelenlegiJatekos() {
+        if (db % 2 === 0) {
+            $("h2").text("O jön");
         }
-        else if(db%2===1)
-        {
-            $("h1").text("A következő játékos: X jön");
+        else if (db % 2 === 1) {
+            $("h2").text("X jön");
         }
     }
 

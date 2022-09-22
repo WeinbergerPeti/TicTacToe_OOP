@@ -1,20 +1,18 @@
-:root 
-{
+:root {
     --palyaMeret: 3;
 }
 
-main 
-{
+main {
     width: 600px;
 }
-article 
-{
+
+article {
     display: grid;
     grid-template-columns: repeat(var(--palyaMeret), 50px);
     grid-template-rows: repeat(var(--palyaMeret), 50px);
     grid-gap: 10px;
 }
-article div 
-{
+
+article div {
     border: 1px solid gray;
 }
